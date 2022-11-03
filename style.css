@@ -1,0 +1,67 @@
+body {
+  background-color: whitesmoke;
+}
+
+.registraion__form {
+  border: 2px solid orange;
+
+  box-shadow: 1px 1px 50px gray;
+
+  width: 50%;
+
+  margin: auto;
+
+  border-radius: 9px;
+}
+
+form input {
+  display: block;
+
+  width: 93%;
+
+  margin-left: 1.5%;
+
+  margin-top: 5px;
+
+  margin-bottom: 1%;
+
+  height: 5vh;
+
+  border: 1px solid lightgrey;
+
+  border-radius: 4px;
+}
+
+form label {
+  margin-left: 1.5%;
+}
+
+button {
+  width: 98%;
+
+  color: white;
+
+  background-color: orange;
+
+  height: 6vh;
+
+  border: none;
+
+  margin: 1%;
+
+  border-radius: 4px;
+}
+
+.form__headings {
+  text-align: center;
+}
+
+.form__headings h3 {
+  margin-top: 7%;
+
+  color: orange;
+}
+
+hr {
+  width: 95%;
+}
