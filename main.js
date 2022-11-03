@@ -1,18 +1,14 @@
-
-// by class name
-// let liList = document.getElementsByClassName('list-group-item');
-
-// for (let index = 0; index < liList.length; index++) {
-//     liList[index].style.backgroundColor = "lightgrey";
-//     liList[index].style.fontWeight = "bold";
-// }
+let li = document.querySelectorAll('.list-group-item');
 
 
-// by tag name
-let liList = document.getElementsByTagName('li');
+li[1].style.background = 'green';
+// li[2].style.display = 'none';
 
-for (let index = 0; index < liList.length; index++) {
-    liList[index].style.backgroundColor = "lightgrey";
-    liList[index].style.fontWeight = "bold";
-    liList[index].style.color = 'green';
+
+for(let i=1; i<li.length; i+=2){
+    li[i].style.background = 'gray';
 }
+
+
+// queryselectorall will give us the array of objects 
+/// queryselector will select only one ele
