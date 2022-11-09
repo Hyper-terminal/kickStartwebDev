@@ -1,58 +1,68 @@
-let ul = document.querySelector("#items");
-let deleteButton = document.querySelector(".delButton");
-let lilist = document.querySelectorAll(".list-group-item");
-let filtersearch = document.querySelector("#itemsearcher");
-let submitButton = document.querySelector("#submitButton");
-let inputfield1 = document.querySelector("#inputField1");
-let inputfield2 = document.querySelector("#inputField2");
+"use strict";
 
-// delete function
+// this different usage
 
-deleteButton.addEventListener("click", () => {
-  if (ul.children.length === 0) {
-    alert("Nothing to delete");
-  } else {
-    ul.lastElementChild.remove();
-  }
-});
+// this.table = "window table";
+// this.garage = {
+//     table: "garage table",
+//     cleanTable(){
+//         console.log("Cleaning " + this.table);
+//     }
+// };
+// this.garage.cleanTable();
 
-// filter search
-filtersearch.addEventListener("keyup", (e) => {
-  const { value } = e.target;
-  let searchValue = value.toString().toLowerCase().trim();
+// let house = {
+//     table: "house table",
+//     cleanTable(){
+//         console.log("Cleaning " + this.table);
+//     }
+// }
 
-  lilist.forEach((element) => {
-    let eleText = element.textContent.toString().toLowerCase().trim();
+// function cleanTable(){
+//     console.log("Cleaning " + this.table);
+// }
 
-    if (eleText.indexOf(searchValue) > -1) {
-      element.style.display = "";
-    } else {
-      element.style.display = "none";
+// house.cleanTable();
+
+
+
+
+// design pattern problem
+
+class Student {
+    static count = 0;
+
+    constructor(name, age, phone_number, board_marks) {
+        this.name = name;
+        this.age = age;
+        this.phone_number = phone_number;
+        this.board_marks = board_marks;
+        Student.count++;
     }
-  });
-});
 
-// add items
-let inputfieldValue1 = "";
-let inputfieldValue2 = "";
+    static totalStudents() {
+        return Student.count;
+    }
 
-// get input field1 value
-inputfield1.addEventListener("keyup", (e) => {
-  inputfieldValue1 = e.target.value;
-});
+    isEligiblePlacement(minMarks) {
+        return  (age) => {
 
-// get input field2 value
-inputfield2.addEventListener("keyup", (e) => {
-  inputfieldValue2 = e.target.value;
-});
+            if (this.board_marks > minMarks && this.age > age) return true;
+            else return false;
 
-// add functionality to submit button
-submitButton.addEventListener("click", (e) => {
-  e.preventDefault();
+        }
+    }
 
-  // create and append child to ul ele
-  let lii = document.createElement("li");
-  lii.textContent = `Name: ${inputfieldValue1} and Description: ${inputfieldValue2}`;
-  lii.className = "list-group-item";
-  ul.appendChild(lii);
-});
+}
+
+Student.prototype.isEligibleCollege = function () {
+    return this.board_marks > 40 ? "eligible" : "not eligible";
+}
+
+
+let student1 = new Student("Sherlock", 18, 1561561, 98);
+let student2 = new Student("John", 26, 11555, 99);
+
+
+console.log(student1.isEligiblePlacement(40)(20));
+console.log(student2.isEligiblePlacement(40)(20));
