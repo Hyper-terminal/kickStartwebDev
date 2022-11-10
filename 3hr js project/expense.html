@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="expense-tracker-form">
+        <label for="expence">Choose Expence Amount:</label>
+        <input type="number" name="expence" id="exp" required/>
+
+        <label for="description">Choose Description</label>
+        <input type="text" name="description" id="desc" required/>
+
+        <label for="category">Choose a category</label>
+        <select id="cate" name="category" required>
+            <option value="movie">Movies</option>
+            <option value="tourism">Tourism</option>
+            <option value="food">Food</option>
+            <option value="shopping">Shopping</option>
+        </select>
+        <button>ADD EXPENCES</button>
+    </form>
+    <ul id="users"></ul>
+    <script src="main.js"></script>
+</body>
+
+</html>
