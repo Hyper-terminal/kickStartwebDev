@@ -1,0 +1,42 @@
+let posts = [];
+
+async function createPost(post) {
+    // create promise to create post
+    let newPostPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            posts.push(post);
+            resolve("post created");
+        }, 3000);
+    });
+
+    try {
+        // resolve create post promise
+        let res = await newPostPromise;
+
+        console.log(res);
+    } catch {
+        console.log("Something gone wrong!");
+    }
+}
+
+createPost({ title: "post1", body: "post1 body" });
+
+const deletePost = async () => {
+    // create promise to delete posts
+
+    let deletePromise = new Promise((resolve, reject) => {
+        if (posts.length === 0) reject("No posts available to delete");
+        else resolve(posts.pop());
+    });
+
+    // resolving every promise in try catch
+
+    try {
+        let res = await deletePromise;
+        console.log(res);
+    } catch (error) {
+        console.log("Error: " + error);
+    }
+};
+
+deletePost();
