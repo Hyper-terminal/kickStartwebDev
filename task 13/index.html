@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form onsubmit="saveToLocalStorage(event)">
+            <label> Name</label>
+            <input type="text" name="username" required />
+            <label> EmailId</label>
+            <input type="email" name="emailId" required />
+            <label> Phone Number</label>
+            <input type="tel" name="phonenumber" />
+            <button>Submit</button>
+        </form>
+        <ul id="listOfitems"></ul>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
